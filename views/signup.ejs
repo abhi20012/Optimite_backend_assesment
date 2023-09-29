@@ -1,0 +1,44 @@
+<div class="signup-container">
+	<div class="left">
+		<div class="head-img">
+			<img src="/images/logo.svg" alt="">
+		</div>
+		<div class="sub-heading">
+			<h1>Hello!</h1>
+			<p class="light-sub-heading">Create Your Account</p>
+		</div>
+		
+		<form action="/users/create" method="POST">
+			<input type="text" name="firstName"  placeholder="First Name" required>
+			<input type="text" name="lastName"  placeholder="Last Name" required>
+			<input type="email" name="email"  placeholder="Email-id" required>
+			<input type="password" name="password" placeholder="Password" required>
+			<input type="password" name="confirm_password" placeholder="Confirm Password" required>
+			<input type="submit" value="SIGN UP">			
+		</form>
+
+			<p class="middle-text">OR</p>	
+
+		<div class="social-btn">
+			<a href="/users/auth/google"><button class="btn-google" >
+				Sign Up With Google
+				<img src="/images/icons8-google.svg" alt="">
+			</button></a>
+			
+			<a href="/users/auth/github"><button class="btn-github">
+				Sign Up With Github
+				<img src="/images/icons8-github.svg" alt="">
+			</button></a>
+		</div>
+
+		<p class="bottom-text">Already have an Account ? <span><a href="/users/signin">LOGIN</a></span></p>
+
+	</div>
+	<div class="line"></div>
+	<div class="right">
+		<img src="/images/bgimage.png" class="bro-img" alt="bro-img">
+		
+	</div>
+</div>
+
+

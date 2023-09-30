@@ -11,7 +11,7 @@ module.exports.create = async function(req, res){
 		})
 		req.flash('success', 'Task added');
 		req.flash('success', "  on dashboard !!");
-		return res.redirect('back')
+		return res.redirect('/users/dashboard')
 	} catch (error) {
 		return res.status(500, {messgae:"Internal Server Error"})
 	}	
@@ -61,3 +61,18 @@ module.exports.update = async function(req, res){
 	}
 }
 
+
+module.exports.toggle = async function(req, res){
+	const { status } = req.body;
+  const { taskId } = req.params;
+
+  try {
+    // Update the task's status in the database
+    const updatedTask = await Task.findByIdAndUpdate(taskId, { status }, { new: true });
+
+    return res.json({ success: true, task: updatedTask });
+  } catch (error) {
+    console.error('An error occurred:', error);
+    return res.status(500).json({ success: false, error: 'Internal Server Error' });
+  }
+}

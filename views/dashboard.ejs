@@ -29,10 +29,11 @@
 						</td>
 						<td class="px-6 py-4 whitespace-nowrap">							
 								<%= task.description %>
-						</td>																				
+						</td>	
+						
 						<td class="px-6 py-4 whitespace-no-wrap">
 							<div class="relative inline-block text-left">
-								<button class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 text-xs leading-4 font-medium rounded text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 active:bg-gray-50 active:text-gray-800 btn" onclick=toggleStatus('<%=task.id%>')>
+								<button class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 text-xs leading-4 font-medium rounded text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 active:bg-gray-50 active:text-gray-800 btn" id="toggle-button-<%=task.id%>" onclick=toggleStatus('<%=task.id%>')>
 									<%= task.status === 'in_progress' ? 'In Progress' : 'Completed' %>
 								</button>
 							</div>
@@ -67,6 +68,44 @@
 		</div>
 	</div>
 <%}%>
+
+<script>
+	function toggleStatus(taskId) {
+  // Find the button element in the current row based on taskId or use a different selector
+  const button = document.getElementById(`toggle-button-${taskId}`);
+  
+  if (button) {
+    // Check the current value of the button
+    if (button.textContent === 'In Progress') {
+      // Toggle the value
+      button.textContent = 'Completed';
+
+      // Send an AJAX request to update the status on the server
+      // You can use fetch or another method to send the request
+      // Example using fetch:
+      fetch(`/task/update/${taskId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ status: 'Completed' }), // You can pass the new status to the server
+      })
+        .then(response => response.json())
+        .then(data => {
+          
+        })
+        .catch(error => {
+          console.error('An error occurred:', error);
+        });
+    } else {
+      button.textContent = 'In Progress';
+      // Send a similar AJAX request to update the status to "Pending"
+    }
+  }
+}
+
+</script>
+	
 
 
 

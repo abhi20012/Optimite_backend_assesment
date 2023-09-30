@@ -63,7 +63,7 @@ module.exports.create = async function(req, res){
 
 module.exports.createSession = function(req, res){
 	return res.render('home', {
-		title:"Home Page"
+		title:"Home page"
 	})
 }
 

@@ -44,7 +44,7 @@ cd task-manager-app
 ```
 
  ### Folder Structure
-
+```
 Employee Review System
     |
     |               |--->css
@@ -93,4 +93,4 @@ Employee Review System
     |--> package-lock.json
     |-->package.json
     
-    ````
+```

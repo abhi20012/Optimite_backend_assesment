@@ -41,3 +41,56 @@ Before you get started with the Task Manager App, ensure you have the following 
 ```bash
 git clone https://github.com/abhi20012/Optimite_backend_assesment.git.git
 cd task-manager-app
+```
+
+ ### Folder Structure
+
+Employee Review System
+    |
+    |               |--->css
+    |--->assets---->|--->images
+    |               |---> Js
+    |
+    |               |--->middleware.js
+    |--->config---->|--->mongoose.js
+    |               |--->mongoose.js
+    |               |--->passport-github-oauth2-strategy.js
+    |               |--->passport-google-oauth2-strategy.js
+    |               |--->passport-jwt-strategy.js
+    |               |--->passport-local-strategy.js
+    |
+    |                  |-->api--->v1--->|usersApi.js
+    |                  |
+    |--->controllers-->|-->home_controller.js
+    |                  |-->task_controller.js
+    |                  |-->user_controller.js
+    |
+    |               |-->task.js
+    |--->models---->|
+    |               |-->user.js
+    |
+    |                                
+    |               |--->api--->v1--->|--->index.js
+    |               |--->index.js     |--->users.js
+    |--->routes---->|-->index.js
+    |               |-->task.js
+    |               |-->user.js
+    |
+    |              |--->_header.ejs
+    |              |--->_footer.ejs
+    |              |---> dashboard.ejs
+    |              |---> editPage.ejs
+    |              |---> home.ejs
+    |--->views---->|--->layout.ejs
+    |              |--->login.ejs
+    |              |--->signup.ejs
+    |              
+    |              
+    |
+    |-->node_modules
+    |-->.gitignore
+    |--> index.js
+    |--> package-lock.json
+    |-->package.json
+    
+    ````
